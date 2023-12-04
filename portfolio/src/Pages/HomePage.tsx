@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useAppDispatch } from '../store/store'
 import { addPages, setCurrentPage } from '../store/routing/routingslice'
+import useWindowResize from '../hooks/useWindowResize'
 
 
 const HomePage = () => {
@@ -15,6 +16,11 @@ const HomePage = () => {
     dispatch(setCurrentPage('MainPage'))
     dispatch(addPages('MainPage'))
   })
+
+  const {height, width} = useWindowResize()
+
+  console.log(width)
+  
   return (
     <div id='HomePage'>
       <div className="head_text">

@@ -16,13 +16,26 @@ const Left_Bar = () => {
     dispatch(addPages(page))
   }
 
-  const icons = ['copy', "guitar", "futbol", "earth-americas", "landmark" ]
-  const hobbytexts = []
+  const icons = ["guitar", "futbol", "earth-americas", "landmark" ]
+  const hobbyTexts = [
+    "Guitar has become a significant part of my life; I've been playing for over three years now.",
+    "Football is a hobby that brings me joy every time. I've loved playing it since childhood, and it has become a passion of mine.",
+    "Geography and Geopolitics represent another facet of my interests. I find myself immersed in these subjects, constantly reading the news to stay informed.",
+    "History, a subject that continually amazes me, serves as proof that the world and its past are truly extraordinary. My love for history blossomed through exploring the rich tapestry of my home country, Georgia. From there, I delved into world history, discovering the fascinating narratives that shape our global heritage."
+  ];
 
   console.log(modal)
   return (
     <div id='Left_Bar'>
        <div className="add_side">
+       <motion.div className="icon-container">
+          <motion.i
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05, duration: 0.6, type: 'spring', stiffness: 100 }}
+            className={`fa-solid fa-copy`}
+          ></motion.i>
+        </motion.div>
       {icons.map((item, i) => (
         <motion.div key={item} className="icon-container">
           <motion.i
@@ -33,15 +46,17 @@ const Left_Bar = () => {
             transition={{ delay: 0.1 * i, duration: 0.6, type: 'spring', stiffness: 100 }}
             className={`fa-solid fa-${item}`}
           ></motion.i>
+         {typeof hoveredIcon == 'string' && (
           <motion.div
-            className="tooltip"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            whileHover={{ opacity: 1 }} // Show tooltip only when hovering over the icon
-          >
-            {hoveredIcon === item && <h2>{item}</h2>}
-          </motion.div>
+          className="tooltip"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          whileHover={{ opacity: 1 }}
+        >
+          {hoveredIcon === item && <h2>{hobbyTexts[i]}</h2>}
+        </motion.div>
+         )} 
         </motion.div>
       ))}
     </div>
