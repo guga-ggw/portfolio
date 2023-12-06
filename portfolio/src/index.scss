@@ -28,9 +28,19 @@ body{
     display: flex;
     @include view1500{
         width: 20vw;
+        height: 105vh;
     }
+    @include view9000{
+        width: 7vw;
+    }
+    @include view1200{
+        padding-left: 10px;
+    }
+    padding-right: 40px;
+    padding-left: 40px;
     .add_side {
         padding-top: 50px;
+        padding-right:20px;
         gap: 60px;
         color: rgba(255, 175, 55, 0.737);
         @include left-nav-added;
@@ -41,14 +51,23 @@ body{
         i{
             cursor: pointer;
         }
+        @include view1200{
+            display: none;
+        }
     }
     .heading_files {
-        width: 80%;
+        width: 100%;
         display: flex;
         @include center;
         justify-content: start;
         text-align: start;
+        @include view1200{
+            width: 140%;
+        }
         .heading_txt{
+            @include view9000{
+                display: none;
+            }
             width: 100%;
             height: 50px;
             padding: 20px;
@@ -62,7 +81,11 @@ body{
             }
         }
         .file_list{
-            padding-right: 50px;
+            
+            @include view9000{
+                display: none;
+            }
+            padding-right: 0px;
             padding-top: 50px;
             display: flex;
             flex-direction: column;
@@ -83,6 +106,18 @@ body{
                 padding-left: 10px;
                 width: 110%;
                 cursor: pointer;
+                @include view1200{
+                    width: 150%;
+                    font-size: 20px
+                }
+                @include view1000{
+                    padding-left: 2px;
+                    gap:10px;
+                    i{
+                        margin-left: 2px
+                    }
+                }
+                
 
             }
         }
@@ -91,6 +126,7 @@ body{
 
 #Top_Bar{
     @include top-nav;
+    width: 90vw;
     overflow: hidden;
     @include view1500{
         width: 85vw
@@ -98,26 +134,42 @@ body{
     @include view1300{
         width: 82vw;
     }
+    @include view9000{
+        width: 94vw;
+    }
 }
 
 
+.right_side{
+    height: 100vh;
+    width: 100vw;
+}
+
 #HomePage{
-    width: 100%;
-    height: 93vh;
+    height: 100%;
     background-color: #1F1F1F;
     @include full-center;
     flex-direction: column;
     gap: 50px;
     padding-bottom: 100px;
-
-
-
+    @include view1200{
+     gap: 20px           
+    }
+    @include view1000{
+        gap: 10px;
+    }
     h1{
         @include heading-txt-font(140px);
         color: rgb(255, 175, 55);
         letter-spacing: 5px;
         @include view1400 { 
             font-size: 120px
+        }
+        @include view1200{
+            font-size: 110px
+        }
+        @include view1000{
+            font-size: 90px
         }
     }
 
@@ -165,6 +217,15 @@ body{
                 width: 250px;
                 margin-top: -50px;
             }
+            @include view1200{
+                margin-top: 40px;
+            }
+            @include view1000{
+                margin-top: 10px;
+                scale: .9;
+            }
+            
+            
         }
         button:nth-child(1){
             background-color: rgb(255, 175, 55);
@@ -192,6 +253,15 @@ body{
             width: 200px;
             font-size: 8px;
         }
+        @include view1000{
+            width: 170px;
+        }
+        @include view9000{
+            width: 150px;
+            height: 80%;
+            padding-left: 15px;
+            gap: 10px;
+        }
         position: relative;
         font-size: 10px;
         gap: 20px;
@@ -200,6 +270,9 @@ body{
             font-size: 30px;
             @include view1300{
                 font-size: 25px;
+            }
+            @include view9000{
+                font-size: 20px;
             }
         }
         p {
@@ -223,6 +296,27 @@ body{
     }
 }
 
+#menu_icon{
+    display: none;
+    @include view9000{
+        display: block;
+        color: rgb(255, 175, 55);
+        margin-top: 25px;
+        font-size: 25px;
+        margin-left: 5px;
+        z-index: 500;
+        margin-left: 20px;
+    }
+}
+
+#x_icon{
+    color: rgb(255, 175, 55);
+    z-index: 500;
+    margin-top: 15px;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
 .tooltip{
     background-color: rgba(19, 18, 18, 0.797);
     position: absolute;
@@ -234,4 +328,9 @@ body{
         font-size: 15px;
         padding: 15px;
     }
+}
+
+#nav_modul{
+    @include modul;
+    z-index: 500;
 }

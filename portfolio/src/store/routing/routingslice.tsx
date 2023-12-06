@@ -3,11 +3,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 export type slicetype = {
   pages: string[],
   currentPage: string,
+  modal : boolean
 }
 
 const initialState: slicetype = {
   pages: [],
   currentPage: "",
+  modal : false
 }
 
 export const routingslice = createSlice({
@@ -26,8 +28,11 @@ export const routingslice = createSlice({
     deletePages: (state, action) => {
       state.pages = state.pages.filter((page) => page !== action.payload);
     },
+    togglemodal : (state) => {
+      state.modal = !state.modal
+    }
   },
 });
 
 export default routingslice.reducer;
-export const { addPages, setCurrentPage, deletePages } = routingslice.actions;
+export const { addPages, setCurrentPage, deletePages, togglemodal } = routingslice.actions;

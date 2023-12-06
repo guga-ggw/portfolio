@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import globe from '../assets/globe.png'
 import {motion} from 'framer-motion'
 import { useAppDispatch, useAppSelector } from '../store/store'
-import { addPages, setCurrentPage } from '../store/routing/routingslice'
+import { addPages, setCurrentPage, togglemodal } from '../store/routing/routingslice'
+import Modal_Page from './modal'
 
 const Left_Bar = () => {
   const [showFiles, setshowFiles] = useState(true)
   const current = useAppSelector((store) => store.routing.currentPage)
   const dispatch = useAppDispatch()
-  const [modal, setmodal] = useState(false)
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const modal = useAppSelector((state) => state.routing.modal)
 
   const setcurrent = (page : string) => {
     dispatch(setCurrentPage(page))
@@ -23,8 +24,6 @@ const Left_Bar = () => {
     "Geography and Geopolitics represent another facet of my interests. I find myself immersed in these subjects, constantly reading the news to stay informed.",
     "History, a subject that continually amazes me, serves as proof that the world and its past are truly extraordinary. My love for history blossomed through exploring the rich tapestry of my home country, Georgia. From there, I delved into world history, discovering the fascinating narratives that shape our global heritage."
   ];
-
-  console.log(modal)
   return (
     <div id='Left_Bar'>
        <div className="add_side">
@@ -61,6 +60,27 @@ const Left_Bar = () => {
       ))}
     </div>
       <div className="heading_files">
+      {modal ? (<motion.h2 
+      id='x_icon' 
+      onClick={() => dispatch(togglemodal())}
+      initial={{opacity : 0, y : -20}} 
+      animate={{opacity : 1, y : 0}} 
+      transition={{duration : 1.4, type : "spring"}}
+      >X
+      
+      </motion.h2>
+      ) 
+      : (
+      <motion.i 
+      initial={{opacity : 0, y : -20}} 
+      animate={{opacity : 1, y : 0}} 
+      transition={{duration : 1.5, type : "spring"}} 
+      id='menu_icon' 
+      className="fa-solid fa-bars" 
+      onClick={() => dispatch(togglemodal())}>
+
+      </motion.i>
+      )}
         <div className="heading_txt">
         {showFiles ? (<i className="fa-solid fa-angle-down" onClick={() => setshowFiles(!showFiles)}></i>) : (<i className="fa-solid fa-angle-up"onClick={() => setshowFiles(!showFiles)}></i>)}
         <h2 style={{color : 'white'}}>Portfolio</h2>

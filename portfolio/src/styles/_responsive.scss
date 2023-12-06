@@ -15,3 +15,21 @@
         @content
     }
 }
+
+@mixin view1200 {
+    @media screen and (max-width: 1200px){
+        @content
+    }
+}
+
+@mixin view1000 {
+    @media screen and (max-width: 1000px){
+        @content
+    }
+}
+
+@mixin view9000 {
+    @media screen and (max-width: 900px){
+        @content
+    }
+}
