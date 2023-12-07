@@ -1,10 +1,11 @@
 @use './colors' as *;
 
 @mixin left-nav-added {
-    width: 20%;
+    width: 10%;
     height: 100%;
     background-color: rgb(25,25,24);
     border-right: 1px solid rgba(128, 128, 128, 0.416);
+    padding-right: 40px;
 }
 
 @mixin left-nav{
@@ -43,4 +44,11 @@
     position: absolute;
     left: 0;
     right: 0;
+}
+
+@mixin PageContent{
+    height: 100%;
+    background-color: #1F1F1F;
+    width: 85vw;
+    color: rgb(255, 175, 55);
 }

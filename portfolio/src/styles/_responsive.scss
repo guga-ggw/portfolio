@@ -33,3 +33,38 @@
         @content
     }
 }
+
+@mixin view800 {
+    @media screen and (max-width: 800px){
+        @content
+    }
+}
+
+@mixin view700 {
+    @media screen and (max-width: 700px){
+        @content
+    }
+}
+
+@mixin view600 {
+    @media screen and (max-width: 600px){
+        @content
+    }
+}
+@mixin view500 {
+    @media screen and (max-width: 500px){
+        @content
+    }
+}
+
+@mixin view450 {
+    @media screen and (max-width: 450px){
+        @content
+    }
+}
+
+@mixin view400 {
+    @media screen and (max-width: 400px){
+        @content
+    }
+}

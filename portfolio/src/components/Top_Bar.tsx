@@ -20,7 +20,13 @@ const Top_Bar: React.FC = () => {
   };
 
   return (
-    <div id='Top_Bar'>
+    <motion.div id='Top_Bar' >
+      <motion.div 
+      className="pages_drag"
+      drag="x"
+      dragDirectionLock={true}
+      dragConstraints={{ left: 0, right: 0}}
+      >
       {pages.map((page) => (
         <motion.div
           key={page} 
@@ -47,7 +53,8 @@ const Top_Bar: React.FC = () => {
           <p onClick={(e) => handleXClick(e, page)}>x</p>
         </motion.div>
       ))}
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -17,8 +17,9 @@ function App() {
 
   useEffect(() => {
     dispatch(setCurrentPage('MainPage'))
-  })
+  },[])
   
+  console.log(currentPage)
   return (
     <>
     <div className="content_container">
