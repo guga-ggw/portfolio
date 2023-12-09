@@ -22,8 +22,9 @@ export const routingslice = createSlice({
         state.pages = [...state.pages, payload];
       }
     },
-    setCurrentPage: (state, action) => {
-      state.currentPage = action.payload;
+    setCurrentPage: (state, action: PayloadAction<string>) => {
+      const payload = action.payload;
+      state.currentPage = payload;
     },
     deletePages: (state, action) => {
       state.pages = state.pages.filter((page) => page !== action.payload);

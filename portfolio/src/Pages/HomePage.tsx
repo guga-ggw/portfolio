@@ -19,10 +19,8 @@ const HomePage = () => {
     dispatch(addPages('MainPage'))
   })
 
-  const {height, width} = useWindowResize()
 
   const setcurrent = (page : string) => {
-    console.log(page)
     dispatch(setCurrentPage(page))
     dispatch(addPages(page))
   }
