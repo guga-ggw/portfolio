@@ -1,7 +1,7 @@
 @use './colors' as *;
 
 @mixin left-nav-added {
-    width: 5%;
+    width: 2%;
     height: 100%;
     background-color: rgb(25,25,24);
     border-right: 1px solid rgba(128, 128, 128, 0.416);
@@ -49,8 +49,9 @@
 @mixin PageContent{
     height: 100%;
     background-color: #1F1F1F;
-    width: 85vw;
+    width: 86vw;
     color: rgb(255, 175, 55);
+    overflow: hidden;
 }
 
 @mixin modul_nav{
@@ -60,4 +61,16 @@
     justify-content: center;
     height: 100vh;
     gap: 100px;
+}
+
+@mixin experience-modul{
+    width: 22%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 100px;
 }

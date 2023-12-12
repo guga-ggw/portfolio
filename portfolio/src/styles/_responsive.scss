@@ -1,3 +1,9 @@
+@mixin view1700{
+    @media screen and (max-width: 1700px){
+        @content
+    }
+}
+
 @mixin view1500 {
     @media screen and (max-width: 1500px){
         @content
@@ -65,6 +71,18 @@
 
 @mixin view400 {
     @media screen and (max-width: 400px){
+        @content
+    }
+}
+
+@mixin hview800{
+    @media screen and (max-height : 820px) {
+        @content
+    }
+}
+
+@mixin hvie670{
+    @media screen and (max-height : 670px) {
         @content
     }
 }

@@ -25,7 +25,7 @@ const Top_Bar: React.FC = () => {
       className="pages_drag"
       drag="x"
       dragDirectionLock={true}
-      dragConstraints={{ left: 0, right: 0}}
+      dragConstraints={{ left: 0, right: -150}}
       >
       {pages.map((page) => (
         <motion.div

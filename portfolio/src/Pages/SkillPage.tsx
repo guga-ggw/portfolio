@@ -28,11 +28,9 @@ const SkillPage = () => {
     const minWidth = 800;
     const mediumWidth = 1070;
   
-    const topConstraint = Number(width) < 700 ? -2900 : Number(width) < minWidth ? -1100 : Number(width) < mediumWidth ? -800 : Number(width) < 1600 ? -700 : 0;
+    const topConstraint = Number(width) < 700 ? -2900 : Number(width) < minWidth ? -900 : Number(width) < mediumWidth ? -800 : Number(width) < 1600 ? -700 : 0;
     const bottomConstraint = Number(width) < 700 ? 20 : Number(width) < mediumWidth ? 200 : Number(width) < 1400 ? 200 : 50;
 
-    console.log(topConstraint)
-  
     return { top: topConstraint, bottom: bottomConstraint };
   };
 

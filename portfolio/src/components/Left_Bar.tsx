@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import globe from '../assets/globe.png'
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import { useAppDispatch, useAppSelector } from '../store/store'
 import { addPages, setCurrentPage, togglemodal } from '../store/routing/routingslice'
 import Modal_Page from './modal'
@@ -45,17 +45,21 @@ const Left_Bar = () => {
             transition={{ delay: 0.1 * i, duration: 0.6, type: 'spring', stiffness: 100 }}
             className={`fa-solid fa-${item}`}
           ></motion.i>
-         {typeof hoveredIcon == 'string' && (
-          <motion.div
-          className="tooltip"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          whileHover={{ opacity: 1 }}
-        >
-          {hoveredIcon === item && <h2>{hobbyTexts[i]}</h2>}
-        </motion.div>
-         )} 
+        {typeof hoveredIcon === 'string' && (
+          <AnimatePresence>
+            <motion.div
+              key={i}
+              className="tooltip"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -200 }} 
+              whileHover={{ opacity: 1 }}
+            >
+              {hoveredIcon === item && <motion.h2>{hobbyTexts[i]}</motion.h2>}
+            </motion.div>
+          </AnimatePresence>
+        )}
         </motion.div>
       ))}
     </div>

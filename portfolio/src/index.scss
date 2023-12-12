@@ -41,6 +41,9 @@ body{
     @include view1200{
         padding-left: 10px;
     }
+    @include view400{
+        width: 10vw;
+    }
     
 
     .add_side {
@@ -49,11 +52,12 @@ body{
         color: rgba(255, 175, 55, 0.737);
         @include left-nav-added;
         @include center('column');
+        position: absolute;
         justify-content: start;
         font-size: 30px;
-        width: 170px;
-        padding-right: 10px;
-        padding-left: 10px;
+        width: 100px;
+        padding-right: 5px;
+        padding-left: 5px;
         position: relative;
         i{
             cursor: pointer;
@@ -143,10 +147,10 @@ body{
         width: 85vw
     }
     @include view1300{
-        width: 80vw;
+        width: 85vw;
     }
     @include view9000{
-        width: 93vw;
+        width: 94vw;
     }
 }
 
@@ -292,6 +296,7 @@ body{
         @include up_tag;
         @include center-row;
         @include regular-txt-font;
+        color: white;
         @include view1500{
             width: 250px;
         }
@@ -357,7 +362,7 @@ body{
     @include full-center;
     flex-direction: column;
     height: 80vh;
-    gap: 20px;
+    gap: 50px;
     @include view1500{
         display: none;
     }
@@ -376,23 +381,23 @@ body{
     }
     .icon_list_txt{
         h2{
-            position: absolute;
-            margin-left: -100px;
+            margin-left: 0px;
             text-align: start;
             @include full-center;
             border-top-left-radius: 50px;
             border-bottom-left-radius: 50px;
             width: 150px;
             height: 40px;
-            margin-top: -60px;
-            background-color:rgb(255, 175, 55) ;
+            margin-top: -110px;
+            background-color:rgb(255, 175, 55);
             @include regular-txt-font;
             font-size: 18px;
         }
         width: 100px;
         right: 100px;
         border-radius: 50px;
-        background-color: red;
+        position: absolute;
+        margin-top: 50px
         
     }
 }
@@ -402,15 +407,14 @@ body{
     text-align: center;
     padding-bottom: 200px;
     @include view1500{
-        width: 80vw;
         height: 98vh;
         overflow: hidden;
         padding-right: 20px;
         padding-bottom: 300px;
     }
     @include view9000{
-        width: 93vh;
-        padding-right: 200px;
+        width: 94vw;
+        padding-left: 5px;
     }
     @include view800{
         display: flex;
@@ -420,13 +424,25 @@ body{
         padding-right: 150px;
     }
     @include view700{
-        padding-right: 250px;
         display: flex;
         padding: 0;
         margin: 0;
         align-items: center;
         justify-content: center;
         width: 93vw;
+        padding-right: 70px;
+    }
+    h1{
+        @include view700{
+            margin-left: 120px;
+        }
+        @include view600{
+            font-size: 40px;
+            margin-left: 100px;
+        }
+        @include view800{
+            margin-left: 150px;
+        }
     }
 
   
@@ -460,19 +476,30 @@ body{
         height: 100vh;
     }
     @include view9000{
-        padding-left: 0px;
-        gap: 190px;
-        padding-right: 200px;
+        width: 90%;
+        padding-left: 20%;
+        gap: 50px;
+        justify-content: space-around;
+        padding-right: 250px;
     }
 
     @include view800{
         padding-top: 100px;
-        margin-left: 150px;
+        margin-left: 10px;
+        padding-right: 50px;
+        width: 60%;
+        gap: 120px;
+        height: 50vh;
+        text-align: center;
     }
     @include view700{
-        width: 200px;
-        padding-left: 70px;
+        width: 600px;
+        padding-right: 70px;
+        gap: 150px;
         
+    }
+    @include view600{
+        width: 500px;
     }
 
 }
@@ -533,9 +560,16 @@ svg{
 }
 
 #nav_modul{
+
     .file_list{
         @include modul_nav;
+        @include view800{
+            gap: 50px;
+        }
         div{
+            @include view600{
+                font-size: 30px;
+            }
             width: 80%;
             height: 70px;
             @include full-center;
@@ -577,9 +611,7 @@ svg{
 #AboutPage{
     @include PageContent;
     @include center-row;
-    @include view9000{
-        width: 93vw;
-    }
+    width: 172vw;
     .HomePage_Links{
         top: 15%;
         right: 0px;
@@ -600,41 +632,468 @@ svg{
         margin-top: -40px;
         margin-left: -135px;
         height: 40px;
+        pointer-events: none;
+        color: orange;
     }
 
-      
       .photoshape {
-        width: 500px;
-        height: 500px;
-        background-color: rgb(201, 128, 17);
+        @include view1700{
+            width: 450px;
+            height: 450px;
+        }
+        @include view1300{
+            width: 400px;
+            height: 400px;
+        }
+        @include view1200{
+            width: 350px;
+            height: 350px;
+        }
+        @include view700{
+            margin-left: 20px;
+            width: 300px;
+            height: 300px;
+        }
+        @include view400{
+            width: 250px;
+            height: 250px;
+        }
+        @include hview800{
+            height: 200px;
+            width: 220px;
+        }
+        @include hvie670{
+            width: 220px;
+            height: 300px;
+        }
+        width: 550px;
+        height: 550px;
+        background-color: rgb(227, 150, 34);
         @include full-center;
         overflow: hidden;
         border-radius: 80% 20% 55% 45% / 49% 51% 49% 51%;
       }
       
     .photo_container{
-        width: 40%;
+        @include view1700{
+            width: 25%;
+        }
+        @include view1300{
+            padding-left: 20px;
+        }
+        @include view1000{
+            justify-items: 50%;
+            flex-direction: row;
+            width: 100%;
+            gap: 50px;
+        }
+        @include view700{
+            width: 110%;
+        }
+        @include view600{
+            flex-direction: column;
+            gap: 20px;
+        }
+        @include view500{
+            padding-left: 0px;
+            padding-right: 10px;
+            text-align: center;
+        }
+        @include hview800{
+            height: 50vh;
+            padding-bottom: 100px;
+        }
+        width: 30%;
         height: 100%;
         @include full-center;
         flex-direction: column;
         gap: 20px;
         text-align: left;
         img{
-            width: 600px;
-            height: 600px;
+            @include view1700{
+                width: 500px;
+                height: 500px;
+            }
+            @include view1200{
+                width: 400px;
+                height: 400px;
+            }
+            @include view400{
+                height: 300px;
+            }
+            @include hview800{
+                height: 250px;
+            }
+            @include hvie670{
+                width: 200px;
+            }
+            margin-top: 100px;
+            width: 700px;
+            height: 700px;
+            pointer-events: none;
+            filter: drop-shadow(5px 20px 20px rgb(0, 0, 0));
         }
         @include regular-txt-font;
         letter-spacing: 1px;
+        padding-bottom: 100px;
+        h2{
+            @include view1700{
+                font-size: 20px;
+            }
+            @include view1400{
+                width: 140%;
+                font-size: 16px;
+            }
+            @include view700{
+                font-size: 14px;
+            }
+            @include hvie670{
+                font-size: 12px;
+            }
+        }
         h3{
+         @include view1700{
+            font-size: 15px;
+            font-size: 13px;
+            }
+        @include view700{
+            font-size: 10px;
+        }
+        @include view500{
+            margin-left: 70px;
+        }
         font-size: 18px;
         @include small-txt-font  
         }
-        padding-bottom: 100px;
     }
     .info_about_container{
-        width: 60%;
+        @include view1700{
+            height: 90%;
+            padding-top: 10px;
+            width: 60%;
+        }
+        @include view1300{
+            padding-bottom: 230px;
+        }
+        @include view1000{
+            width: 100%;
+            height: 40%;
+            padding-bottom: 200px;
+            gap: 0px;
+        }
+        @include view9000{
+            text-align: center;
+        }
+        @include hview800{
+            padding-bottom: 200px;
+        }
+        @include hview800{
+            padding-bottom: 110px;
+        }
+        width: 55%;
         height: 100%;
+        @include regular-txt-font;
+        letter-spacing: 1px;
+        font-size: 40px;
+        @include center;
+        padding-bottom: 200px;
+        gap: 30px;
+        position: relative;
+        .heading_txt_about{
+            display: flex;
+            font-size: 40px;
+            @include view1300{
+                font-size: 30px;
+            }
+            @include view1000{
+               font-size: 20px;
+            }
+            @include view9000{
+                margin-left: 120px;
+            }
+            @include view700{
+                margin-left: -300px;
+            }
+            @include view600{
+                margin-left: 40px;
+            }
+            @include view600{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+            @include hvie670{
+                font-size: 12px;
+            }
+        }
+        .about_me_txt{
+            @include view1200{
+                padding-left: 50px;
+                width: 80%;
+            }
+            @include view1000{
+                width: 100%;
+            }
+            @include view9000{
+                text-align: center;
+            }
+            @include view700{
+                text-align: start;
+            }
+            @include view600{
+                padding-left: 20px;
+                padding-bottom: 80px;
+            }
+            flex-direction: column;
+            display: flex;
+            padding-left: 150px;
+            width: 100%;
+        }
+        P{
+            width: 80%;
+            font-size: 15px;
+            @include view1700{
+                font-size: 12px;
+            }
+            @include view1300{
+                font-size: 10px;
+                width: 110%;
+            }
+            @include view1000{
+                font-size: 11px;
+            }
+            @include view600{
+                font-size: 9px;
+                width: 400px;
+            }
+            @include view500{
+                width: 90vw;
+                padding-right: 20px;
+                font-size: 8px;
+            }
+            @include hvie670{
+                font-size: 7px;
+            }
+        }
+        button{
+            @include view1500{
+                bottom: 120px;
+            }
+            @include view1300{
+                bottom: 200px;
+                font-size: 14px;
+                left: 160px;
+            }
+            @include view1200{
+                bottom: 250px;
+                left: 130px;
+                
+            }
+            @include view1000{
+                bottom: 630px;
+                left: 67%
+            }
+            @include view600{
+                bottom: 90px;
+                left: 5%;
+            }
+            @include view500{
+                left: 35%;
+                bottom: 70px
+            }
+            @include hview800{
+                bottom: 25px
+            }
+            @include button;
+            cursor: pointer;
+            border-radius: 5px;
+            color: rgb(253, 166, 36);
+            @include regular-txt-font;
+            font-size: 17px;
+            background-color: transparent;
+            transition: .4s ease-in;
+            margin-top: 20px;
+            position: absolute;
+            left: 190px;
+            bottom: 160px;
+            &:hover{
+                text-shadow: 2px 3px 10px rgba(253, 166, 36, 0.626);
+            }
+        }
+    }
+
+    #first_abt{
+        display: flex;
+        @include full-center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        @include view1000{
+            flex-direction: column;
+        }
+    }
+    #Second_abt{
+        @include view1500{
+            padding-left: 70px;
+        }
+        @include view1300{
+            padding-left: 30px;
+        }
+        @include view9000{
+            gap: 100px;
+            padding-left: 60px;
+        }
+        @include view800{
+            flex-direction: column;
+            padding-left: 5%;
+        }
+        @include view600{
+            padding-left: 50px;
+        }
+
+        position: relative;
+        width: 95%;
+        height: 100%;
+        display: flex;
+        padding-left: 100px;
+        gap: 40px;
+        .education_side, .myexperience_side{
+            @include experience-modul;
+            @include view1200{
+                margin-top: 20px;
+            }
+            @include view500{
+                margin-top: 40px;
+            }
+
+            h2{
+                @include view1300{
+                    margin-left: -150px;
+                }
+                @include view9000{
+                    margin-left: -50px
+                }
+                @include view500{
+                    margin-left: 20px;
+                }
+                @include small-txt-font;
+                font-size: 35px;
+                margin-left: -260px;
+            }
+            #cont_exp{
+                @include view1500{
+                    width: 450px;
+                    height: 160px;
+                }
+                @include view1300{
+                    margin-left: 20px;
+                    width: 350px;
+                    height: 200px;
+                }
+                @include view1000{
+                    width: 300px;
+                }
+                @include view800{
+                    width: 450px;
+                    margin-left: 320px;
+                    height: 150px;
+                }
+                @include view600{
+                    margin-left: 230px;
+                    height: 200px;
+                    width: 360px;
+                }
+                @include view500{
+                    margin-left: 120px;
+                    width: 200%;
+                    height: 300px;
+                }
+                width: 500px;
+                height: 180px;
+                background-color: rgba(19, 18, 18, 0.334);
+                border: 1px solid rgb(253, 166, 36);
+                box-shadow: 12px 5px 10px .1px rgba(253, 166, 36, 0.282);
+                border-radius: 10px;
+                padding: 5px;
+                padding-left: 10px;
+                overflow: hidden;
+                h3{
+                    @include view1300{
+                        font-size: 16px
+                    }
+                    @include view400{
+                        font-size: 9px
+                    }
+                    @include small-txt-font;
+                }
+                p{
+                    @include view1500{
+                        font-size: 11px
+                    }
+                    @include view400{
+                        font-size: 8px;
+                        margin-top: 5px
+                    }
+                    @include regular-txt-font;
+                    margin-top: 10px;
+                    font-size: 13px;
+                }
+            }
+            .content_side{
+                @include view1700{
+                    left: -10px;
+                }
+                @include view1200{
+                    margin-top: 60px;
+                }
+                @include view9000{
+                    left: -30px;
+                }
+                @include view800{
+                    margin-top: 90px;
+                }
+                position: absolute;
+                width: 3px;
+                height: 78%;
+                background-color: rgb(255, 175, 55);
+                left: 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 200px;
+                padding-top: 80px;
+                
+                div{
+                    @include view500{
+                        width: 20px;
+                        height: 20px;
+                        margin-left: 5px;
+                    }
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: rgb(253, 166, 36);
+                    transform: translateX(-12px);
+                }
+            }
+        }
+        .myexperience_side{
+            @include experience-modul;
+
+        }
     }
 
 }
 
+#back_button{
+    @include view500{
+        font-size: 15px;
+    }
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(255, 175, 55);
+    background-color: transparent;
+    @include button;
+    @include regular-txt-font;
+    font-size: 20px;
+    cursor: pointer;
+}
