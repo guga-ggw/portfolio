@@ -14,17 +14,19 @@
     list-style: none;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
 body{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .content_container {
     display: flex;
     width: 100%;
     height: 100vh;
-    overflow: hidden
 }
 
 #Left_Bar {
@@ -158,7 +160,7 @@ body{
 .right_side{
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #HomePage{
@@ -1096,4 +1098,31 @@ svg{
     @include regular-txt-font;
     font-size: 20px;
     cursor: pointer;
+}
+
+#ProjectPage{
+    @include view9000{
+        width: 94vw
+    }
+    @include PageContent;
+    height: 800vh;
+    overflow-y: scroll;
+}
+
+.projectPage_txt{
+    width: 400vw;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    height: 43vh;
+    transform: translate(-50%, -50%);
+    @include heading-txt-font(120px);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    padding-left: 180%;
+    gap: 30vw;
+    h1{
+        width: 20%;
+    }
 }
