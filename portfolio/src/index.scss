@@ -1100,29 +1100,72 @@ svg{
     cursor: pointer;
 }
 
-#ProjectPage{
-    @include view9000{
-        width: 94vw
+#ProjectPage {
+    @include view9000 {
+      width: 94vw;
     }
     @include PageContent;
-    height: 800vh;
-    overflow-y: scroll;
-}
+    @include full-center;
+    flex-direction: column;
+    height: 180vh;  
+    #Project_txt{
+        padding: 100px;
+        font-size: 140px;
+        @include small-txt-font;
 
-.projectPage_txt{
-    width: 400vw;
-    position: absolute;
-    left: 55%;
-    top: 50%;
-    height: 43vh;
-    transform: translate(-50%, -50%);
-    @include heading-txt-font(120px);
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    padding-left: 180%;
-    gap: 30vw;
-    h1{
-        width: 20%;
     }
-}
+    .Project_list{
+        @include full-center;
+        width: 98%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 100px;
+        .card_project{
+            width: 40%;
+            height: 45%;
+            box-shadow: 2  2px 20px 20px .1px rgba(253, 166, 36, 0.197);
+            border-radius: 20px;
+            overflow: hidden;
+            .img_over{
+                width: 100%;
+                height: 70%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    transition: .3s ease-in;
+                    overflow: hidden;
+                    &:hover{
+                        scale: 1.1;
+                    }
+                }
+            }
+            
+        }
+        .desc_project_side{
+            @include center;
+            padding-top: 20px;
+            gap: 10px;
+            h2{
+                @include regular-txt-font;
+            }
+            p{
+                @include small-txt-font;
+            }
+            button{
+                @include button;
+                width: 150px;
+                height: 30px;
+                margin-top: 5px;
+                border-radius: 5px;
+                background-color: rgb(253, 166, 36);
+                color: #1F1F1F;
+                @include regular-txt-font;
+                font-weight: 600;
+                a{
+                    color:  black;
+                }
+            }
+        }
+    }
+  }

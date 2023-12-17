@@ -7,6 +7,7 @@ const SkillPage = () => {
   type Skill = [string, number];
 
   const [hoverlink, sethoverlink] = useState<string | null>('')
+  
     const skills: Skill[] = [
       ['HTML', 90],
       ['CSS', 85],
@@ -19,10 +20,11 @@ const SkillPage = () => {
       ['Redux', 85],
       ['Communication', 95],
     ];
+  
+
   const dispatch = useAppDispatch()
   const {width} = useWindowResize()
 
-  console.log(width)
 
   const calculateDragConstraints = () => {
     const minWidth = 800;
@@ -30,9 +32,12 @@ const SkillPage = () => {
   
     const topConstraint = Number(width) < 700 ? -2900 : Number(width) < minWidth ? -900 : Number(width) < mediumWidth ? -800 : Number(width) < 1600 ? -700 : 0;
     const bottomConstraint = Number(width) < 700 ? 20 : Number(width) < mediumWidth ? 200 : Number(width) < 1400 ? 200 : 50;
-
     return { top: topConstraint, bottom: bottomConstraint };
   };
+
+
+
+
 
   return (
     <div id='SkillPage'>
@@ -70,7 +75,6 @@ const SkillPage = () => {
           cx="80" cy="85" r="70" strokeLinecap="round"
           stroke="url(#GradientColor)" strokeWidth="15" fill="transparent"
         />
-
         </svg>
         <motion.h2 initial={{opacity : 0, y : -20}} animate={{opacity : 1, y : 0}} transition={{delay : 0.15 * i, duration : 1,}}>{item[0]}</motion.h2>
       </div>

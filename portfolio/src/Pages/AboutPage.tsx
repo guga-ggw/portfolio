@@ -7,30 +7,17 @@ const AboutPage = () => {
   const [hoverlink, sethoverlink] = useState<string | null>('');
   const [transised, settransised] = useState<boolean>(false)
   const aboutText = [
-    'Greetings!',
-    'I\'m a 16-year-old frontend developer,',
-    'fervently juggling the world of web development with the challenges of high school.',
-    'The allure of coding captivates me,',
-    'and I find joy in crafting visually stunning websites.',
-    'Amidst textbooks and exams, I\'m dedicated to honing my skills',
-    'and staying at the forefront of technology.',
-    '',
-    'Away from the digital realm,',
-    'I\'m an active individual, deeply immersed in sports to maintain a balanced and healthy lifestyle.',
-    'The rhythmic strumming of my guitar strings provides a creative outlet,',
-    'adding a melodic dimension to my vibrant life.',
-    '',
-    'My passion for learning extends beyond code;',
-    'it\'s a mindset that defines my approach to both challenges and opportunities.',
-    'Known for my curiosity and innate intelligence,',
-    'I embrace new endeavors with enthusiasm.',
-    'From tackling complex coding projects to navigating the intricacies of everyday life,',
-    'I thrive on the thrill of overcoming obstacles.',
-    '',
-    'In essence, I am a dynamic individual with a love for technology,',
-    'an active lifestyle, and an insatiable appetite for new challenges.',
-    'With coding, sports, and music as my compass,',
-    'I embark on a journey of continuous growth and exploration.'
+    'Hey there!',
+  'I\'m a 16-year-old who loves coding and making cool websites while dealing with high school life.',
+  'I find joy in the creative side of coding, making things visually awesome.',
+  'Even with school stuff, I\'m always working to get better at coding and keep up with the latest tech.',
+  'Outside the digital world, I\'m into sports to keep things balanced and healthy.',
+  'Strumming my guitar is my go-to creative outlet, adding a musical vibe to my life.',
+  'I love learning, not just about code, but in everything I do.',
+  'I\'m known for being curious and smart, and I dive into new things with excitement.',
+  'Whether it\'s coding challenges or regular life stuff, I enjoy overcoming obstacles.',
+  'In a nutshell, I\'m a dynamic person who loves tech, stays active, and is always up for new challenges.',
+  'With coding, sports, and music guiding me, I\'m on a journey of constant growth and exploration.'
   ];
   const HeadText = ['W', 'h', 'o', ' ‎  ‎', 'a', 'm', ' ‎ ‎', 'I']
   const link = [

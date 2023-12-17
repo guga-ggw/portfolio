@@ -24,6 +24,7 @@
     outline: none;
     border: none;
     text-align: center;
+    cursor: pointer;
 }
 
 @mixin up_tag {
@@ -51,7 +52,6 @@
     background-color: #1F1F1F;
     width: 86vw;
     color: rgb(255, 175, 55);
-    overflow: hidden;
 }
 
 @mixin modul_nav{
