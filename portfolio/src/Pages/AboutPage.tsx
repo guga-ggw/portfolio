@@ -21,7 +21,7 @@ const AboutPage = () => {
   ];
   const HeadText = ['W', 'h', 'o', ' ‎  ‎', 'a', 'm', ' ‎ ‎', 'I']
   const link = [
-    ['fa-brands fa-instagram', 'Instagram', 'https://www.instagram.com/'],
+    ['fa-brands fa-instagram', 'Instagram', 'https://www.instagram.com/guga_muchiashvili/'],
     ['fa-brands fa-facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=100010053016821'],
     ['fa-brands fa-linkedin', 'LinkedIn', 'https://www.linkedin.com/in/guga-muchiashvili-55a379286/'],
     ['fa-brands fa-github', 'GitHub', 'https://github.com/guga-ggw'],

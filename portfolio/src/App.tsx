@@ -19,7 +19,6 @@ function App() {
     dispatch(setCurrentPage('MainPage'))
   },[])
   
-  console.log(currentPage)
   return (
     <>
     <div className="content_container">

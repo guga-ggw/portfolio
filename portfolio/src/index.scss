@@ -35,7 +35,7 @@ body{
     display: flex;
     @include view1500{
         width: 20vw;
-        height: 105vh;
+        height: 100vh;
     }
     @include view9000{
         width: 7vw;
@@ -415,7 +415,7 @@ body{
         padding-bottom: 300px;
     }
     @include view9000{
-        width: 94vw;
+        width: 95vw;
         padding-left: 5px;
     }
     @include view800{
@@ -431,7 +431,7 @@ body{
         margin: 0;
         align-items: center;
         justify-content: center;
-        width: 93vw;
+        width: 94vw;
         padding-right: 70px;
     }
     h1{
@@ -440,10 +440,12 @@ body{
         }
         @include view600{
             font-size: 40px;
-            margin-left: 100px;
+            margin-left: 80px;
         }
         @include view800{
-            margin-left: 150px;
+            width: 100%;
+            text-align: center;
+            margin-left: 40px;
         }
     }
 
@@ -479,16 +481,16 @@ body{
     }
     @include view9000{
         width: 90%;
-        padding-left: 20%;
-        gap: 50px;
+        padding-left: 1%;
+        gap: 90px;
         justify-content: space-around;
-        padding-right: 250px;
+        padding-right: 50px;
     }
 
     @include view800{
         padding-top: 100px;
-        margin-left: 10px;
-        padding-right: 50px;
+        margin-left: 260px;
+        padding-right: 150px;
         width: 60%;
         gap: 120px;
         height: 50vh;
@@ -496,7 +498,8 @@ body{
     }
     @include view700{
         width: 600px;
-        padding-right: 70px;
+        padding-right: 220px;
+        padding-left: 50px;
         gap: 150px;
         
     }
@@ -940,6 +943,10 @@ svg{
         @include view1300{
             padding-left: 30px;
         }
+        @include view1200{
+            margin-top: 20vh;
+            height: 120vh;
+        }
         @include view9000{
             gap: 100px;
             padding-left: 60px;
@@ -947,11 +954,19 @@ svg{
         @include view800{
             flex-direction: column;
             padding-left: 5%;
+            height: 200vh;
+            margin-top: 100vh;
         }
         @include view600{
             padding-left: 50px;
+            height: 300vh;
+            margin-top: 200vh;
         }
-
+        @include view450{
+            height: 300vh;
+            margin-top: 200vh;
+        }
+        background-color: #1F1F1F;
         position: relative;
         width: 95%;
         height: 100%;
@@ -1005,9 +1020,9 @@ svg{
                     width: 360px;
                 }
                 @include view500{
-                    margin-left: 120px;
+                    margin-left: 180px;
                     width: 200%;
-                    height: 300px;
+                    height: 200px;
                 }
                 width: 500px;
                 height: 180px;
@@ -1023,7 +1038,7 @@ svg{
                         font-size: 16px
                     }
                     @include view400{
-                        font-size: 9px
+                        font-size: 12px
                     }
                     @include small-txt-font;
                 }
@@ -1104,29 +1119,97 @@ svg{
     @include view9000 {
       width: 94vw;
     }
+    @include view1500{
+        height: 190vh
+    }
+    @include view1200{
+        height: 400vh;
+    }
+    @include hvie670{
+        height: 490vh;
+    }
+    @include view400{
+        height: 500vh
+    }
     @include PageContent;
     @include full-center;
     flex-direction: column;
-    height: 180vh;  
+    height: 150vh;  
     #Project_txt{
-        padding: 100px;
+        @include view700{
+            font-size: 80px;
+        }
+        @include view450{
+            padding-bottom: 100px;
+        }
+        @include view400{
+            font-size: 50px;
+        }
+        padding: 50px;
         font-size: 140px;
         @include small-txt-font;
 
     }
     .Project_list{
+        @include view1500{
+        padding-right: 100px;
+        }
         @include full-center;
+        @include view1200{
+            display: block;
+            height: 400vh;
+            padding: 0px 50px;
+            padding-right: 200px;
+            padding-top: 40px;
+            gap: 20px;
+        }
+        @include view9000{
+            padding-right: 50px;
+            padding: 0px 20px;
+        }
+    
         width: 98%;
-        height: 100%;
+        height: 80%;
         flex-wrap: wrap;
         gap: 100px;
         .card_project{
+            @include view1500{
+                text-align: center;
+            }
+            @include view1200{
+                flex-direction: row;
+                height: 20%;
+                width: 120%;
+                gap: 20px;
+            }
+            @include view9000{
+                width: 100%;
+                flex-direction: column;
+            }
+            @include view600{
+                height: 700px;
+            }
+            display: flex;
+            flex-direction: column;
             width: 40%;
             height: 45%;
             box-shadow: 2  2px 20px 20px .1px rgba(253, 166, 36, 0.197);
             border-radius: 20px;
             overflow: hidden;
             .img_over{
+                @include view1700{
+                    height: 60%;
+                }
+                @include view1200{
+                    width: 120%;
+                }
+                @include view700{
+                    height: 50%;
+                    width: 140%;
+                }
+                @include view500{
+                    height: 900px;
+                }
                 width: 100%;
                 height: 70%;
                 overflow: hidden;
@@ -1135,6 +1218,7 @@ svg{
                     height: 100%;
                     transition: .3s ease-in;
                     overflow: hidden;
+                    border-radius: 20px;
                     &:hover{
                         scale: 1.1;
                     }
@@ -1144,16 +1228,28 @@ svg{
         }
         .desc_project_side{
             @include center;
+            @include view1200{
+                padding-bottom: 200px;
+            }
+            @include view700{
+                padding-bottom: 300px;
+            }
             padding-top: 20px;
             gap: 10px;
             h2{
+                
                 @include regular-txt-font;
             }
             p{
                 @include small-txt-font;
+                font-size: 10px
             }
             button{
+                &:hover{
+                    scale: 1.1;
+                }
                 @include button;
+                transition: .4s;
                 width: 150px;
                 height: 30px;
                 margin-top: 5px;
@@ -1162,10 +1258,54 @@ svg{
                 color: #1F1F1F;
                 @include regular-txt-font;
                 font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                z-index: 20;
                 a{
                     color:  black;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
                 }
             }
         }
+    }
+  }
+
+  #project_modul{
+    @include view9000{
+        text-align: center;
+    }
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include full-center;
+    background-color: rgba(0, 0, 0, 0.809);
+    z-index: 2000;
+    flex-direction: column;
+    gap: 80px;
+    @include small-txt-font;
+    h2{
+        @include view9000{
+            font-size: 35px;
+        }
+        font-size: 50px;
+    }
+    button{
+        @include button;
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgb(227, 150, 34);
+        font-size: 20px;
+        @include regular-txt-font
     }
   }
